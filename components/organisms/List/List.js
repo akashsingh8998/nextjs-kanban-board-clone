@@ -4,7 +4,7 @@ import Card from '../../atoms/Card';
 import AddCard from '../../molecules/AddCard/AddCard';
 import { DashOutlined } from '@ant-design/icons';
 
-const ListComp = ({listData}) => {
+const ListComp = ({listData,addNewCardData}) => {
 
     return(
         <div className="listWrapper">
@@ -17,7 +17,7 @@ const ListComp = ({listData}) => {
                     {Object.keys(listData?.cards)?.map((cardKey) => {
                         return <Card cardData={listData.cards[cardKey]} key={cardKey}/>;
                     })}
-                    <AddCard/>
+                    <AddCard addNewCardData={addNewCardData} listId={listData?.id}/>
                 </div>
             </div>
             <style jsx>{`

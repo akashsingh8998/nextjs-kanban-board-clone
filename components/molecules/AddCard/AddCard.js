@@ -3,12 +3,20 @@ import { Input, Typography, Button } from 'antd';
 import { PlusOutlined,CloseOutlined } from '@ant-design/icons';
 
 
-const AddCard = ({}) => {
+const AddCard = ({addNewCardData,listId}) => {
     const { TextArea } = Input;
     const [open, setOpen] = useState(false);
-    const [cardTitle, setCardTitle] = useState("hello");
+    const [cardTitle, setCardTitle] = useState(null);
 
-    const clickAndBlurHandler = () => {
+    const addAndCloseBtnHandler = () => {
+        setOpen(!open);
+    }
+
+    const onCardDataSubmit = () => {
+        if(cardTitle){
+            addNewCardData(listId,cardTitle);
+        }
+        setCardTitle(null);
         setOpen(!open);
     }
 
@@ -19,19 +27,18 @@ const AddCard = ({}) => {
                     <div className="inputContainer">
                         <TextArea 
                             defaultValue={cardTitle} 
-                            onBlur={clickAndBlurHandler} 
                             onChange={(event) => {setCardTitle(event.target.value)}}
                         />
                     </div>
-                    <Button type="primary" onClick={clickAndBlurHandler}>Add card</Button>
-                    <Button type="text" icon={<CloseOutlined />} onClick={clickAndBlurHandler}/>
+                    <Button type="primary" onClick={onCardDataSubmit}>Add card</Button>
+                    <Button type="text" icon={<CloseOutlined />} onClick={addAndCloseBtnHandler}/>
                 </div>
             ) : (
                 <Button 
                     type="text" 
                     icon={<PlusOutlined />} 
                     style={{color: '#5e6c84', textAlign: 'left'}} 
-                    onClick={clickAndBlurHandler}
+                    onClick={addAndCloseBtnHandler}
                     block
                 >
                     Add a card
