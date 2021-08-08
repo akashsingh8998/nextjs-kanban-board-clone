@@ -4,26 +4,25 @@ import Card from '../../atoms/Card';
 import AddCard from '../../molecules/AddCard/AddCard';
 import { DashOutlined } from '@ant-design/icons';
 
-const ListComp = ({}) => {
+const ListComp = ({listData}) => {
 
     return(
         <div className="listWrapper">
             <div className="list">
                 <div className="listContent">
                     <div className="listHeader">
-                        <div className="listTitle"><EditableTitle/></div>
+                        <div className="listTitle"><EditableTitle title={listData.title}/></div>
                         <DashOutlined style={{ fontSize: '21px', color: '#08c' }}/>
                     </div>
-                    <Card/>
-                    <Card/>
-                    <Card/>
-                    <Card/>
+                    {Object.keys(listData?.cards)?.map((cardKey) => {
+                        return <Card cardData={listData.cards[cardKey]} key={cardKey}/>;
+                    })}
                     <AddCard/>
                 </div>
             </div>
             <style jsx>{`
                 .listWrapper {
-                    width: 272px;
+                    min-width: 272px;
                     margin: 0 4px;
                     height: 100%;
                 }

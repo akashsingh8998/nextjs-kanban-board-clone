@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Input, Typography } from 'antd';
 
-const EditableTitle = ({}) => {
+const EditableTitle = ({title}) => {
     const { Text, Paragraph } = Typography;
-    const [titleStr, setTitleStr] = useState("hello");
+    const [titleStr, setTitleStr] = useState(title);
     const [editable, setEditable] = useState(false);
 
     const clickAndBlurHandler = () => {
