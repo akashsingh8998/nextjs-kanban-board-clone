@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Input, Typography } from 'antd';
 
-const Title = ({}) => {
+const TitleComp = ({}) => {
     const { Text, Paragraph } = Typography;
     const [titleStr, setTitleStr] = useState("hello");
     const [editable, setEditable] = useState(false);
@@ -11,11 +11,11 @@ const Title = ({}) => {
     }
 
     return(
-        <div className="">
+        <div>
             {editable ? (
                 <Input defaultValue={titleStr} onBlur={clickAndBlurHandler} onChange={(event) => {setTitleStr(event.target.value)}}/>
             ) : (
-                <Text onClick={clickAndBlurHandler}>{titleStr}</Text>
+                <Text strong onClick={clickAndBlurHandler}>{titleStr}</Text>
             )}
             
             <style jsx>{`
@@ -27,4 +27,4 @@ const Title = ({}) => {
     );
 };
 
-export default Title;
+export default TitleComp;

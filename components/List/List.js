@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import Title from '../Title'
-import { Card, Row, Col, List } from 'antd';
+import Title from '../Title';
+import Card from '../Card';
+import { Row, Col, List } from 'antd';
 import { DashOutlined } from '@ant-design/icons';
 
 const ListComp = ({}) => {
@@ -10,9 +11,13 @@ const ListComp = ({}) => {
             <div className="list">
                 <div className="listContent">
                     <div className="listHeader">
-                        <Title/>
+                        <div className="listTitle"><Title/></div>
                         <DashOutlined style={{ fontSize: '21px', color: '#08c' }}/>
                     </div>
+                    <Card/>
+                    <Card/>
+                    <Card/>
+                    <Card/>
                 </div>
             </div>
             <style jsx>{`
@@ -31,11 +36,14 @@ const ListComp = ({}) => {
                     white-space: normal;
                 }
                 .listContent {
-                    padding: 5px 10px;
+                    padding: 10px;
                 }
                 .listHeader {
                     display: flex;
                     justify-content: space-between;
+                    margin-bottom: 10px;
+                }.listTitle {
+                    padding-left: 12px; 
                 }
             `}</style>
         </div>
