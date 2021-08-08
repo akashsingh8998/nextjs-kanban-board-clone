@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import EditableTitle from '../../molecules/EditableTitle';
 import Card from '../../atoms/Card';
+import AddCard from '../../molecules/AddCard/AddCard';
 import { DashOutlined } from '@ant-design/icons';
 
 const ListComp = ({}) => {
@@ -17,6 +18,7 @@ const ListComp = ({}) => {
                     <Card/>
                     <Card/>
                     <Card/>
+                    <AddCard/>
                 </div>
             </div>
             <style jsx>{`
