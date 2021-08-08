@@ -3,44 +3,44 @@ import { Input, Button } from 'antd';
 import { PlusOutlined,CloseOutlined } from '@ant-design/icons';
 
 
-const AddCard = ({addNewCardData,listId}) => {
+const AddList = ({addNewList}) => {
     const { TextArea } = Input;
     const [open, setOpen] = useState(false);
-    const [cardTitle, setCardTitle] = useState(null);
+    const [listTitle, setlistTitle] = useState(null);
 
     const addAndCloseBtnHandler = () => {
         setOpen(!open);
     }
 
     const onCardDataSubmit = () => {
-        if(cardTitle){
-            addNewCardData(listId,cardTitle);
+        if(listTitle){
+            addNewList(listTitle);
         }
-        setCardTitle(null);
+        setlistTitle(null);
         setOpen(!open);
     }
 
     return(
-        <div>
+        <div className="newListContainer">
             {open ? (
                 <div>
                     <div className="inputContainer">
-                        <TextArea 
-                            onChange={(event) => {setCardTitle(event.target.value)}}
+                        <Input 
+                            onChange={(event) => {setlistTitle(event.target.value)}}
                         />
                     </div>
-                    <Button type="primary" onClick={onCardDataSubmit}>Add card</Button>
+                    <Button type="primary" onClick={onCardDataSubmit}>Add list</Button>
                     <Button type="text" icon={<CloseOutlined />} onClick={addAndCloseBtnHandler}/>
                 </div>
             ) : (
                 <Button 
                     type="text" 
                     icon={<PlusOutlined />} 
-                    style={{color: '#5e6c84', textAlign: 'left'}} 
+                    style={{ color:'#ffffff', backgroundColor: 'rgba(255, 255, 255, 0.2)', textAlign: 'left'}} 
                     onClick={addAndCloseBtnHandler}
                     block
                 >
-                    Add a card
+                    Add another list
                 </Button>
             )}
             
@@ -48,9 +48,12 @@ const AddCard = ({addNewCardData,listId}) => {
                 .inputContainer {
                     margin-bottom: 10px;
                 }
+                .newListContainer {
+                    min-width: 272px;
+                }
             `}</style>
         </div>
     );
 };
 
-export default AddCard;
+export default AddList;

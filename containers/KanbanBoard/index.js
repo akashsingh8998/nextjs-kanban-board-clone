@@ -13,8 +13,15 @@ const Board = () => {
     setBoardData(boardDataCopy);
   }
 
+  const addNewList = (listTitle) => {
+    const listId = `list-${new Date().getTime()}`;
+    let boardDataCopy = {...boardData};
+    boardDataCopy[listId] = {id: listId, title: listTitle, cards: {}};
+    setBoardData(boardDataCopy);
+  }
+
   return (
-    <KanbanBoard boardData={boardData} addNewCardData={addNewCardData}/>
+    <KanbanBoard boardData={boardData} addNewCardData={addNewCardData} addNewList={addNewList}/>
   )
 };
 

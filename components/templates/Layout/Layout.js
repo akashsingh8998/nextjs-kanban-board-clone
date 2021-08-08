@@ -18,6 +18,27 @@ const Layout = ({children,title}) => {
             </Head>
             <div>{children}</div>
             {/**footer */}
+            {/* <style jsx>{`
+                .sectionMain {
+                    z-index: 1;
+                    background-color: #0079bf;
+                    height: 100%;
+                }
+            `}</style> */}
+            <style jsx global>{`
+                html,
+                body {
+                background-color: #0079bf;
+                margin: 3px 1px;
+                font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+                    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+                    sans-serif;
+                }
+
+                * {
+                box-sizing: border-box;
+                }
+            `}</style>
         </main>
     );
 };

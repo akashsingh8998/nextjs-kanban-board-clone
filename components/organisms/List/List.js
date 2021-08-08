@@ -12,7 +12,7 @@ const ListComp = ({listData,addNewCardData}) => {
                 <div className="listContent">
                     <div className="listHeader">
                         <div className="listTitle"><EditableTitle title={listData.title}/></div>
-                        <DashOutlined style={{ fontSize: '21px', color: '#08c' }}/>
+                        <DashOutlined style={{ fontSize: '21px', color: '#6b778c' }}/>
                     </div>
                     {Object.keys(listData?.cards)?.map((cardKey) => {
                         return <Card cardData={listData.cards[cardKey]} key={cardKey}/>;
