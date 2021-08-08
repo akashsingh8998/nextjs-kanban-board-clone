@@ -1,6 +1,6 @@
 import React from 'react';
-import Layout from '../components/molecules/Layout';
-import List from '../components/atoms/List';
+import Layout from '../components/templates/Layout';
+import List from '../components/organisms/List';
 
 export default function Board() {
   return (

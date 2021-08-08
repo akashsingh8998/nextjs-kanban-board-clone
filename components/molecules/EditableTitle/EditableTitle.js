@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Input, Typography } from 'antd';
 
-const TitleComp = ({}) => {
+const EditableTitle = ({}) => {
     const { Text, Paragraph } = Typography;
     const [titleStr, setTitleStr] = useState("hello");
     const [editable, setEditable] = useState(false);
@@ -27,4 +27,4 @@ const TitleComp = ({}) => {
     );
 };
 
-export default TitleComp;
+export default EditableTitle;
