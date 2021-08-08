@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useContext } from 'react';
 import Head from 'next/head';
+import { PageHeader, Input, Typography } from 'antd';
 import 'antd/dist/antd.css';
 
-const Layout = ({children,title}) => {
+const Layout = ({children,title,searchHandler}) => {
     return(
         <main 
             id="mainContent"
@@ -16,15 +17,26 @@ const Layout = ({children,title}) => {
                 <meta name="theme-color" content="#000" />
                 <title>{title}</title>
             </Head>
+            <div>
+                <PageHeader
+                    title={<Typography style={{color: '#fff'}}>Daily to-do list Kanban board</Typography>}
+                    extra={
+                        <Input.Search 
+                            allowClear 
+                            style={{}} 
+                            placeholder="search cards" 
+                            onSearch={searchHandler}
+                        />
+                    }
+                ></PageHeader>
+            </div>
             <div>{children}</div>
             {/**footer */}
-            {/* <style jsx>{`
-                .sectionMain {
-                    z-index: 1;
+            <style jsx>{`
+                .ant-page-header-heading-title {
                     background-color: #0079bf;
-                    height: 100%;
                 }
-            `}</style> */}
+            `}</style>
             <style jsx global>{`
                 html,
                 body {

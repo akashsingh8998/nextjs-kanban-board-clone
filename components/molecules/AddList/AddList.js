@@ -27,6 +27,7 @@ const AddList = ({addNewList}) => {
                     <div className="inputContainer">
                         <Input 
                             onChange={(event) => {setlistTitle(event.target.value)}}
+                            placeholder="Enter list title..."
                         />
                     </div>
                     <Button type="primary" onClick={onCardDataSubmit}>Add list</Button>

@@ -27,6 +27,7 @@ const AddCard = ({addNewCardData,listId}) => {
                     <div className="inputContainer">
                         <TextArea 
                             onChange={(event) => {setCardTitle(event.target.value)}}
+                            placeholder="Enter a title for this card..."
                         />
                     </div>
                     <Button type="primary" onClick={onCardDataSubmit}>Add card</Button>
