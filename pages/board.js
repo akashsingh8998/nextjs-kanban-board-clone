@@ -1,7 +1,6 @@
-import React, { useState, useEffect, useContext } from 'react';
-import { DatePicker } from 'antd';
-import Layout from '../components/Layout';
-import List from '../components/List';
+import React from 'react';
+import Layout from '../components/molecules/Layout';
+import List from '../components/atoms/List';
 
 export default function Board() {
   return (

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Title from '../Title';
 import Card from '../Card';
-import { Row, Col, List } from 'antd';
 import { DashOutlined } from '@ant-design/icons';
 
 const ListComp = ({}) => {
