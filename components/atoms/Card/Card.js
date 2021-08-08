@@ -11,7 +11,7 @@ const CardComp = ({cardData}) => {
             </Card>
             <style jsx>{`
                 .cardDiv {
-                    margin-bottom: 5px;
+                    margin-bottom: 8px;
                 }
             `}</style>
         </div>

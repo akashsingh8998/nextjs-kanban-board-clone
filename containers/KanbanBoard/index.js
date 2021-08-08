@@ -4,7 +4,6 @@ import kanbanBoardData from '../../utils/mockData/kanbanBoardData';
 
 const Board = () => {
   const [boardData, setBoardData] = useState(kanbanBoardData);
-  console.log(kanbanBoardData);
 
   const addNewCardData = (listId, cardTitle) => {
     const cardId = `card-${new Date().getTime()}`;
