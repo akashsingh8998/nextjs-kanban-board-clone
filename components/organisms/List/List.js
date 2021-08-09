@@ -3,6 +3,7 @@ import EditableTitle from '../../molecules/EditableTitle';
 import Card from '../../atoms/Card';
 import AddCard from '../../molecules/AddCard/AddCard';
 import { DashOutlined } from '@ant-design/icons';
+import { Droppable } from 'react-beautiful-dnd';
 
 const ListComp = ({listData,addNewCardData}) => {
 
@@ -14,9 +15,19 @@ const ListComp = ({listData,addNewCardData}) => {
                         <div className="listTitle"><EditableTitle title={listData.title}/></div>
                         <DashOutlined style={{ fontSize: '21px', color: '#6b778c' }}/>
                     </div>
-                    {Object.keys(listData?.cards)?.map((cardKey) => {
-                        return <Card cardData={listData.cards[cardKey]} key={cardKey}/>;
-                    })}
+                    <Droppable droppableId={listData?.id}>
+                        {(provided) => (
+                            <div
+                                ref={provided.innerRef}
+                                {...provided.droppableProps}
+                            >
+                                {Object.keys(listData?.cards)?.map((cardKey,index) => {
+                                    return <Card cardData={listData.cards[cardKey]} key={cardKey} index={index}/>;
+                                })}
+                                {provided.placeholder}
+                            </div>
+                        )}
+                    </Droppable>
                     <AddCard addNewCardData={addNewCardData} listId={listData?.id}/>
                 </div>
             </div>

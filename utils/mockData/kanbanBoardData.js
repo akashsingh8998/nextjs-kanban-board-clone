@@ -3,16 +3,16 @@ const data = {
       id: 'list-1',
       title: 'Todo',
       cards: {
-        'card-1': {
-          id: 'card-1',
+        'card-11': {
+          id: 'card-11',
           title: 'Learning how to cook1',
         },
-        'card-2': {
-          id: 'card-2',
+        'card-12': {
+          id: 'card-12',
           title: 'Making sandwich1',
         },
-        'card-3': {
-          id: 'card-3',
+        'card-13': {
+          id: 'card-13',
           title: 'Taking the trash out1',
         },
       },
@@ -21,16 +21,16 @@ const data = {
       id: 'list-2',
       title: 'Doing',
       cards: {
-        'card-1': {
-          id: 'card-1',
+        'card-21': {
+          id: 'card-21',
           title: 'Learning how to cook2',
         },
-        'card-2': {
-          id: 'card-2',
+        'card-22': {
+          id: 'card-22',
           title: 'Making sandwich2',
         },
-        'card-3': {
-          id: 'card-3',
+        'card-23': {
+          id: 'card-23',
           title: 'Taking the trash out2',
         },
       },
@@ -39,16 +39,16 @@ const data = {
       id: 'list-3',
       title: 'Done',
       cards: {
-        'card-1': {
-          id: 'card-1',
+        'card-31': {
+          id: 'card-31',
           title: 'Learning how to cook3',
         },
-        'card-2': {
-          id: 'card-2',
+        'card-32': {
+          id: 'card-32',
           title: 'Making sandwich3',
         },
-        'card-3': {
-          id: 'card-3',
+        'card-33': {
+          id: 'card-33',
           title: 'Taking the trash out3',
         },
       },
