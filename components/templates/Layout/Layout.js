@@ -20,6 +20,7 @@ const Layout = ({children,title,searchHandler}) => {
             <div>
                 <PageHeader
                     title={<Typography style={{color: '#fff'}}>Daily to-do list Kanban board</Typography>}
+                    style={{padding: '10px 5px'}}
                     extra={
                         <Input.Search 
                             allowClear 
